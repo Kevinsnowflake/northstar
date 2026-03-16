@@ -83,7 +83,7 @@ with right:
     st.markdown(
         """
 - **Format your name correctly** (no all-lowercase / no all-uppercase).
-- **No middle name?** Use an empty string: `''`.
+- **No middle name?** Keep blank.
 - **Email must match** what they used to register.
         """.strip()
     )
@@ -124,8 +124,14 @@ elif not EMAIL_RE.match(email):
 
 if not first:
     errors.append("First name is required.")
+elif re.fullmatch(r"['\"""'']+", first):
+    errors.append("First name contains only quote characters — please enter your actual name.")
 if not last:
     errors.append("Last name is required.")
+elif re.fullmatch(r"['\"""'']+", last):
+    errors.append("Last name contains only quote characters — please enter your actual name.")
+if middle and re.fullmatch(r"['\"""'']+", middle):
+    errors.append("Middle name contains only quote characters — leave the field blank if you don't have one.")
 
 if errors:
     with error_container:
