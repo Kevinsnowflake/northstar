@@ -58,9 +58,9 @@ def test_load_event_hub_configs_allows_page_only_hub(monkeypatch: pytest.MonkeyP
     payload = json.dumps(
         [
             {
-                "event_name": "Virtual APAC (9/14/2026)",
-                "nav_title": "Virtual APAC (9/14/2026)",
-                "page": "pages/5_Virtual_APAC_Day1.py",
+                "event_name": "APAC Virtual (9/14/2026)",
+                "nav_title": "APAC Virtual — Day 1 (9/14)",
+                "page": "pages/5_APAC_Virtual_Day1.py",
                 "intro": "Hello APAC",
             }
         ]
@@ -69,9 +69,9 @@ def test_load_event_hub_configs_allows_page_only_hub(monkeypatch: pytest.MonkeyP
     monkeypatch.setattr(event_hubs, "_event_hubs_json_text", lambda: payload)
     rows = event_hubs.load_event_hub_configs()
     assert len(rows) == 1
-    assert rows[0]["event_name"] == "Virtual APAC (9/14/2026)"
+    assert rows[0]["event_name"] == "APAC Virtual (9/14/2026)"
     assert rows[0]["workshops"] == []
-    assert rows[0]["page"] == "pages/5_Virtual_APAC_Day1.py"
+    assert rows[0]["page"] == "pages/5_APAC_Virtual_Day1.py"
 
 
 def test_hub_page_path_explicit_page() -> None:
@@ -138,20 +138,20 @@ def test_resolve_event_config_hub_falls_back_to_sheet_workshops(monkeypatch: pyt
         "get_event_hub",
         lambda name: {
             "event_name": name,
-            "nav_title": "Virtual APAC (9/14/2026)",
+            "nav_title": "APAC Virtual — Day 1 (9/14)",
             "intro": "Hello APAC",
             "workshops": [],
             "trial_events": [name],
         }
-        if name == "Virtual APAC (9/14/2026)"
+        if name == "APAC Virtual (9/14/2026)"
         else None,
     )
     monkeypatch.setattr(
         event_page,
         "load_event_workshops",
-        lambda name: ["Lab From Sheet"] if name == "Virtual APAC (9/14/2026)" else [],
+        lambda name: ["Lab From Sheet"] if name == "APAC Virtual (9/14/2026)" else [],
     )
-    cfg = event_page.resolve_event_config("Virtual APAC (9/14/2026)")
+    cfg = event_page.resolve_event_config("APAC Virtual (9/14/2026)")
     assert cfg["workshops"] == ["Lab From Sheet"]
 
 

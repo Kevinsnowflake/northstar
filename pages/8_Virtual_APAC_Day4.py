@@ -1,3 +1,0 @@
-from event_page import render_event_checklist
-
-render_event_checklist("Virtual APAC (9/17/2026)")
