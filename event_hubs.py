@@ -105,14 +105,7 @@ def is_event_hub_event(event_name: str | None) -> bool:
     return get_event_hub(event_name) is not None
 
 
-_DEFAULT_HUB_PAGES: dict[str, str] = {
-    "Chennai (9/5/2026)": "pages/5_Chennai.py",
-}
-
-
 def hub_page_path(cfg: dict[str, Any]) -> str | None:
     """Return the dedicated sidebar page path for a hub config, if any."""
     explicit = (cfg.get("page") or "").strip()
-    if explicit:
-        return explicit
-    return _DEFAULT_HUB_PAGES.get(cfg["event_name"])
+    return explicit or None

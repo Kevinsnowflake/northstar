@@ -1,8 +1,34 @@
 [
   {
-    "event_name": "Chennai (9/5/2026)",
-    "nav_title": "Chennai (9/5/2026)",
-    "page": "pages/5_Chennai.py",
+    "event_name": "Virtual APAC (9/14/2026)",
+    "nav_title": "Virtual APAC (9/14/2026)",
+    "page": "pages/5_Virtual_APAC_Day1.py",
+    "workshop": "CoCo Foundations: Getting Started with CoCo",
+    "trial_events": ["Virtual APAC (9/14-17/2026)"],
+    "intro": "Follow the steps below in order. Use the same email for trial signup and the auto-grader."
+  },
+  {
+    "event_name": "Virtual APAC (9/15/2026)",
+    "nav_title": "Virtual APAC (9/15/2026)",
+    "page": "pages/6_Virtual_APAC_Day2.py",
+    "workshop": "Data Ingestion, Transformation, and Delivery with Snowflake",
+    "trial_events": ["Virtual APAC (9/14-17/2026)"],
+    "intro": "Follow the steps below in order. Use the same email for trial signup and the auto-grader."
+  },
+  {
+    "event_name": "Virtual APAC (9/16/2026)",
+    "nav_title": "Virtual APAC (9/16/2026)",
+    "page": "pages/7_Virtual_APAC_Day3.py",
+    "workshop": "Creating Declarative Data Pipelines with Dynamic Tables",
+    "trial_events": ["Virtual APAC (9/14-17/2026)"],
+    "intro": "Follow the steps below in order. Use the same email for trial signup and the auto-grader."
+  },
+  {
+    "event_name": "Virtual APAC (9/17/2026)",
+    "nav_title": "Virtual APAC (9/17/2026)",
+    "page": "pages/8_Virtual_APAC_Day4.py",
+    "workshop": "From Zero to Agents: Building End-to-End Data Pipeline for an AI Agent",
+    "trial_events": ["Virtual APAC (9/14-17/2026)"],
     "intro": "Follow the steps below in order. Use the same email for trial signup and the auto-grader."
   }
 ]
